@@ -98,10 +98,6 @@ export ARB_SEPOLIA_RPC_URL="your-arbitrum-sepolia-rpc-url"
 forge test --match-test testBridgeAllTokens
 ```
 
-**Recommended RPC Providers:**
-- [Alchemy](https://www.alchemy.com/) (free tier available)
-- [Infura](https://www.infura.io/) (free tier available)
-- [QuickNode](https://www.quicknode.com/) (free tier available)
 
 ### Test Coverage
 
@@ -216,22 +212,3 @@ forge script script/ConfigurePool.s.sol --rpc-url $SEPOLIA_RPC_URL --broadcast
 - **Key Functions**:
   - `deposit()`: Deposit ETH and receive rebase tokens
   - `redeem()`: Redeem rebase tokens for ETH
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## 📄 License
-
-This project is licensed under the MIT License.
-
-## 🙏 Acknowledgments
-
-- [Chainlink CCIP](https://chain.link/cross-chain) for cross-chain infrastructure
-- [OpenZeppelin](https://openzeppelin.com/) for secure contract libraries
-- [Foundry](https://book.getfoundry.sh/) for the development framework
-
-## 📞 Contact
-
-- Author: [@Adeshh](https://github.com/Adeshh)
-- Repository: [ccip-rebase-token](https://github.com/Adeshh/ccip-rebase-token)
