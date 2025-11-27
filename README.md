@@ -1,66 +1,29 @@
-## Foundry
+# CCIP Rebase Token
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+## Running Tests
 
-Foundry consists of:
+### Cross-Chain Tests
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+Cross-chain tests require RPC access to Sepolia and Arbitrum Sepolia networks. If you encounter RPC timeout errors, you can set custom RPC URLs using environment variables:
 
-## Documentation
-
-https://book.getfoundry.sh/
-
-## Usage
-
-### Build
-
-```shell
-$ forge build
+```bash
+export SEPOLIA_RPC_URL="your-sepolia-rpc-url"
+export ARB_SEPOLIA_RPC_URL="your-arbitrum-sepolia-rpc-url"
+forge test --match-test testBridgeAllTokens
 ```
 
-### Test
-
-```shell
-$ forge test
+Or set them inline:
+```bash
+SEPOLIA_RPC_URL="your-url" ARB_SEPOLIA_RPC_URL="your-url" forge test --match-test testBridgeAllTokens
 ```
 
-### Format
+### Recommended RPC Providers
 
-```shell
-$ forge fmt
-```
+- **Alchemy**: https://www.alchemy.com/ (free tier available)
+- **Infura**: https://www.infura.io/ (free tier available)
+- **QuickNode**: https://www.quicknode.com/ (free tier available)
 
-### Gas Snapshots
+### Public RPC Endpoints (may have rate limits)
 
-```shell
-$ forge snapshot
-```
+The default configuration uses public RPC endpoints which may timeout on free tiers. Consider using a paid RPC service for reliable testing.
 
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
